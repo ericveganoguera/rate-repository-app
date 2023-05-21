@@ -6,7 +6,7 @@ import theme from '../theme'
 const RepositoryItemHeader = props => {
   return (
     <View style={{ flexDirection: 'row', paddingBottom: 2 }}>
-      <View style={{ flex: 0, paddingRight: 10 }}>
+      <View style={{ paddingRight: 10 }}>
         <Image style={styles.image} source={{ uri: props.ownerAvatarUrl }} />
       </View>
       <View style={{ flex: 1 }}>

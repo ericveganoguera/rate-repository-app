@@ -6,12 +6,11 @@ import RepositoryItem from './RepositoryItem.jsx'
 const RepositoryList = () => {
   return (
     <FlatList
+      style={{ marginVertical: 10 }}
       data={repositories}
       ItemSeparatorComponent={() => <Text> </Text>}
       renderItem={({ item: repo }) => (
-        <>
-          <RepositoryItem {...repo} />
-        </>
+        <RepositoryItem {...repo} />
       )}
     />
 
