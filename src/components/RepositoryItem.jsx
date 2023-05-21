@@ -1,18 +1,14 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import StyledText from './StyledText'
+import RepositoryStats from './RepositoryStats'
+import theme from '../theme'
+import RepositoryItemHeader from './RepositoryItemHeader'
 
 const RepositoryItem = (props) => {
   return (
     <View key={props.id} style={styles.container}>
-      <StyledText big bold>id: {props.id}</StyledText>
-      <StyledText blue>FullName: {props.fullName}</StyledText>
-      <StyledText bold>Description: {props.description}</StyledText>
-      <StyledText blue>Language: {props.language}</StyledText>
-      <StyledText small>Stars: {props.stargazersCount}</StyledText>
-      <StyledText small>Forks: {props.forksCount}</StyledText>
-      <StyledText small>Review: {props.reviewCount}</StyledText>
-      <StyledText small>Rating: {props.ratingAverage}</StyledText>
+      <RepositoryItemHeader {...props} />
+      <RepositoryStats {...props} />
     </View>
   )
 }
@@ -20,8 +16,22 @@ const RepositoryItem = (props) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingBottom: 5,
-    paddingTop: 5
+    paddingVertical: 5
+  },
+  language: {
+    padding: 5,
+    marginTop: 4,
+    marginBottom: 4,
+    color: theme.colors.white,
+    backgroundColor: theme.colors.primary,
+    alignSelf: 'flex-start',
+    borderRadius: 4,
+    overflow: 'hidden'
+  },
+  image: {
+    width: 64,
+    height: 64,
+    borderRadius: 4
   }
 })
 
